@@ -10,7 +10,6 @@ games = Games.new(year_response)
 ages_response = []
 puts "Please enter an event for your games. i.e. Soccer"
 name_response = gets.chomp.capitalize
-
 events = Event.new(name_response, ages_response)
 
 games.events << events
