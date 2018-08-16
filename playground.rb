@@ -33,6 +33,7 @@ loop do
   ages_response = []
 
   potential_events = ["Bowling", "Curling", "Football", "Swimming"]
+
   puts "Please enter another event for your games. i.e. #{potential_events.sample}"
   name_response = gets.chomp.capitalize
   events = Event.new(name_response, ages_response)
