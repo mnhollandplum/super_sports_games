@@ -8,17 +8,17 @@ year_response = gets.chomp
 games = Games.new(year_response)
 
 ages_response = []
-puts "Please enter an event for your games. i.e. soccer"
+puts "Please enter an event for your games. i.e. Soccer"
 name_response = gets.chomp.capitalize
 
 events = Event.new(name_response, ages_response)
 
 games.events << events
 
-puts "Please enter the ages of your players for #{events.name} i.e. 19, 22, 33. Add up to five ages for your players"
+puts "Please enter the ages of your players for #{events.name} one at a time. When you are finished, type done."
 ages = gets.chomp
 
-while ages != "exit"
+while ages != "done"
 ages_response << ages.to_i
 ages = gets.chomp
 end
@@ -31,15 +31,20 @@ loop do
   if yes_no == "y"
 
   ages_response = []
-  puts "Please enter another event for your games. i.e. tennis"
+
+  potential_events = ["Bowling", "Curling", "Football", "Swimming"]
+
+  puts "Please enter another event for your games. i.e. #{potential_events.sample}"
   name_response = gets.chomp.capitalize
   events = Event.new(name_response, ages_response)
   games.events << events
 
-  puts "Please enter the ages of your players for #{events.name} i.e. 10, 11, 33. Add up to five ages for your players"
+
+
+  puts "Please enter the ages of your players for #{events.name} one at a time. When you are finished, type done."
   ages = gets.chomp
 
-  while ages != "exit"
+  while ages != "done"
   ages_response << ages.to_i
   ages = gets.chomp
   end
