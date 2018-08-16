@@ -16,7 +16,12 @@ events = Event.new(name_response, ages_response)
 games.events << events
 
 puts "Please enter the ages of your players for #{events.name} i.e. 19, 22, 33. Add up to five ages for your players"
-ages_response << gets.chomp.to_i
+ages = gets.chomp
+
+while ages != "exit"
+ages_response << ages.to_i
+ages = gets.chomp
+end
 #put in a if statement that determines correct response for ages
 
 loop do
@@ -32,7 +37,12 @@ loop do
   games.events << events
 
   puts "Please enter the ages of your players for #{events.name} i.e. 10, 11, 33. Add up to five ages for your players"
-  ages_response << gets.chomp.to_i
+  ages = gets.chomp
+
+  while ages != "exit"
+  ages_response << ages.to_i
+  ages = gets.chomp
+  end
 
   elsif yes_no == "n"
     break
