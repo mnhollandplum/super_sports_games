@@ -13,8 +13,8 @@ loop do
   yes_no = gets.chomp
   if yes_no == "y"
 
-  puts "enter events for your games. i.e. soccer"
-  name_response = gets.chomp
+  puts "enter an event for your games. i.e. soccer"
+  name_response = gets.chomp.capitalize
   puts "enter the ages of your players i.e. 19, 22, 33. Add up to five ages for your players"
   ages_response << gets.chomp.to_i
   #put in a if statement that determines correct response for ages
@@ -32,4 +32,4 @@ loop do
 
   end
 end
-puts games.all_events_summary
+puts games.summary
